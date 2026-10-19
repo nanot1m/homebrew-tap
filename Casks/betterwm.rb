@@ -1,0 +1,27 @@
+cask "betterwm" do
+  version "0.12.0"
+  sha256 "8c6f3b71930944952d61e5eea9fc23b5d36fd127eda3106cd86580e36ccf755b"
+
+  url "https://github.com/nanot1m/better-win-manager/releases/download/v#{version}/BetterWM-#{version}.zip"
+  name "BetterWM"
+  desc "Column-based tiling window manager with virtual workspaces and a status bar"
+  homepage "https://github.com/nanot1m/better-win-manager"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
+  app "BetterWM.app"
+
+  caveats <<~EOS
+    BetterWM is ad-hoc signed, not notarized. If macOS refuses to open it, clear the quarantine flag:
+      xattr -dr com.apple.quarantine "#{appdir}/BetterWM.app"
+    or install with: brew install --cask --no-quarantine nanot1m/tap/betterwm
+    Grant Accessibility access on first launch (System Settings > Privacy & Security > Accessibility).
+  EOS
+
+  zap trash: [
+    "~/.config/betterwm",
+  ]
+end
