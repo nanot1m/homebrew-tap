@@ -3,9 +3,10 @@
 Homebrew tap for [BetterWM](https://github.com/nanot1m/better-win-manager).
 
 ```sh
-brew install --cask --no-quarantine nanot1m/tap/betterwm
+brew install --cask nanot1m/tap/betterwm
+xattr -dr com.apple.quarantine /Applications/BetterWM.app
 ```
 
-`--no-quarantine` skips Gatekeeper's block on the ad-hoc signed app; without it, right-click BetterWM.app and choose Open once, or run `xattr -dr com.apple.quarantine /Applications/BetterWM.app`.
+The app is ad-hoc signed, so Gatekeeper blocks the first launch until the quarantine flag is cleared (or right-click BetterWM.app and choose Open once).
 
 The cask is updated automatically by BetterWM's release workflow.

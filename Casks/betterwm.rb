@@ -17,7 +17,6 @@ cask "betterwm" do
   caveats <<~EOS
     BetterWM is ad-hoc signed, not notarized. If macOS refuses to open it, clear the quarantine flag:
       xattr -dr com.apple.quarantine "#{appdir}/BetterWM.app"
-    or install with: brew install --cask --no-quarantine nanot1m/tap/betterwm
     Grant Accessibility access on first launch (System Settings > Privacy & Security > Accessibility).
   EOS
 
