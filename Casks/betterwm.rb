@@ -1,6 +1,6 @@
 cask "betterwm" do
-  version "0.27.1"
-  sha256 "9dc253e4db5be9908b0b42403386aaada3bf602af3d52a1146e6d6a6964049f0"
+  version "0.27.2"
+  sha256 "40ff7dbbb02c7c113b26b4053308de3d52c0f652f2ecf38c4cf0a27d69e15899"
 
   url "https://github.com/nanot1m/better-win-manager/releases/download/v#{version}/BetterWM-#{version}.zip"
   name "BetterWM"
